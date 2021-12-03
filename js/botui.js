@@ -2583,21 +2583,22 @@ function bot_ui_ini() {
             botui.message.add({ delay: 1000, content: "😊" })
                 .then(function() {
                     botui.message.add({ delay: 1000, content: "好吧,嘿嘿,私藏的个人写真~" })
-                        .then(function() { seventhpart() })
+                        .then(function() { showphoto() })
+                        //.then(function() { sixthpart() })
                 })
 
-            seventhpart = function() {
-                botui.message.add({ delay: 1000, content: "![..1](https://i.ibb.co/r5DWVmc/1638547270245.jpg)" })
+            var sixthpart = function() {
+                botui.message.add({ delay: 1000, content: "这是我的个人简历!感兴趣可以联系我!🌹" })
                     .then(function() {
-                        botui.message.add({ delay: 1000, content: "![..2](https://i.ibb.co/hDPbXCN/1638537784999.jpg)" })
-                            .then(function() {
-                                botui.message.add({ delay: 1000, content: "这是我的个人简历!感兴趣可以联系我!🌹" })
-                                    .then(function() {
-                                        botui.message.add({ delay: 1600, content: "[个人简历](../img/resume.pdf)" })
-                                    })
-                            })
+                        botui.message.add({ delay: 1600, content: "[个人简历](../img/resume.pdf)" })
                     })
             };
+            var showphoto = function() {
+                botui.message.add({
+                    delay: 1000,
+                    content: "![...](https://vivianyuan12138.github.io/img/1638547270245.jpg)"
+                })
+            }
 
         },
         end1 = function() {
@@ -2610,3 +2611,4 @@ function bot_ui_ini() {
 
 // .then(function(){botui.message.add({delay:1600,content:"那么，相遇就是缘分，赏个赞吧 ^_^"})})
 //rebuild by neat
+//![..1](https://i.ibb.co/r5DWVmc/1638547270245.jpg)"
