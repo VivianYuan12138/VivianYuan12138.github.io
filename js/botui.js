@@ -2582,33 +2582,35 @@ function bot_ui_ini() {
     var sure1 = function() {
             botui.message.add({ delay: 1000, content: "😊" })
                 .then(function() {
-                    botui.message.add({ delay: 1000, content: "好吧,嘿嘿,私藏的个人写真~" })
-                        .then(function() { showphoto() })
-                        //.then(function() { sixthpart() })
+                    botui.message.add({ delay: 1000, content: "但有我的个人简历!感兴趣可以联系我!🌹" })
+                        .then(function() {
+                            botui.message.add({ delay: 1000, content: "[个人简历](../img/resume.pdf)" })
+                        })
+                        .then(function() {
+                            botui.action.button({
+                                    delay: 5000,
+                                    action: [{ text: "真的没有吗💖？", value: "why-domain" }]
+                                })
+                                .then(function() {
+                                    botui.message.add({ delay: 1000, content: "好吧,嘿嘿,私藏的个人写真~" })
+                                        .then(function() {
+                                            botui.message.add({
+                                                delay: 2000,
+                                                content: "![...](../img/1638547270245.jpg)"
+                                            })
+                                        })
+                                })
+                        })
                 })
-
-            var sixthpart = function() {
-                botui.message.add({ delay: 1000, content: "这是我的个人简历!感兴趣可以联系我!🌹" })
-                    .then(function() {
-                        botui.message.add({ delay: 1600, content: "[个人简历](../img/resume.pdf)" })
-                    })
-            };
-            var showphoto = function() {
-                botui.message.add({
-                    delay: 1000,
-                    content: "![...](https://vivianyuan12138.github.io/img/1638547270245.jpg)"
-                })
-            }
-
         },
         end1 = function() {
             botui.message.add({ delay: 600, content: "那么，相遇就是缘分，赏个赞吧 ^_^" })
         };
+
 }
-
-
 //then(function(){botui.message.add({delay:1600,content:"![...](../img/1638537784999.jpeg)"})})}}
 
 // .then(function(){botui.message.add({delay:1600,content:"那么，相遇就是缘分，赏个赞吧 ^_^"})})
 //rebuild by neat
 //![..1](https://i.ibb.co/r5DWVmc/1638547270245.jpg)"
+//https://vivianyuan12138.github.io
